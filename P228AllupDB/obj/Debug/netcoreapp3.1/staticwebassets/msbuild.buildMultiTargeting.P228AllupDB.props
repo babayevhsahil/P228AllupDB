@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\P228AllupDB.props" />
+</Project>
