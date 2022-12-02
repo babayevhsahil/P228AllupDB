@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using P228AllupDB.DAL;
 
 namespace P228AllupDB.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221127162813_UpdateProductsTableRelatedBrandsTable")]
+    partial class UpdateProductsTableRelatedBrandsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -112,10 +114,7 @@ namespace P228AllupDB.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BrandId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("BrandId")
                         .HasColumnType("int");
 
                     b.Property<int>("Code")
@@ -187,8 +186,6 @@ namespace P228AllupDB.Migrations
 
                     b.HasIndex("BrandId");
 
-                    b.HasIndex("CategoryId");
-
                     b.ToTable("Products");
                 });
 
@@ -232,49 +229,6 @@ namespace P228AllupDB.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductImages");
-                });
-
-            modelBuilder.Entity("P228AllupDB.Models.ProductTag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TagId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("TagId");
-
-                    b.ToTable("ProductTags");
                 });
 
             modelBuilder.Entity("P228AllupDB.Models.Setting", b =>
@@ -398,11 +352,7 @@ namespace P228AllupDB.Migrations
                 {
                     b.HasOne("P228AllupDB.Models.Brand", "Brand")
                         .WithMany("Products")
-                        .HasForeignKey("BrandId");
-
-                    b.HasOne("P228AllupDB.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -412,21 +362,6 @@ namespace P228AllupDB.Migrations
                     b.HasOne("P228AllupDB.Models.Product", "Product")
                         .WithMany("ProductImages")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("P228AllupDB.Models.ProductTag", b =>
-                {
-                    b.HasOne("P228AllupDB.Models.Product", "Product")
-                        .WithMany("ProductTags")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("P228AllupDB.Models.Tag", "Tag")
-                        .WithMany("ProductTags")
-                        .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

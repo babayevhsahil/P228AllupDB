@@ -119,7 +119,7 @@
                         <div class="col-lg-3">
                             <div class="header-logo-contact d-flex  ">
                                 <div class="desktop-logo">
-                                    <a href="index.html">
+                                    <a asp-controller="home" asp-action="index">
                                         <img src="~/assets/images/@settings.First(s=>s.Key=="Logo").Value" alt="Logo">
                                     </a>
                                 </div> <!-- desktop logo -->
@@ -408,13 +408,7 @@
                         <div class="col-lg-9 position-static">
                             <div class="header-horizontal-menu">
                                 <ul class="menu-content">
-                                    <li class="active"><a href="#">Home <i class="fal fa-chevron-down"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="index.html">Home 01</a></li>
-                                            <li><a href="index-2.html">Home 02</a></li>
-                                            <li><a href="index-3.html">Home 03</a></li>
-                                            <li><a href="index-4.html">Home 04</a></li>
-                                        </ul>
+                                    <li class="active"><a asp-controller="home">Home </a>
                                     </li>
                                     <li><a href="about.html">About</a></li>
                                     <li><a href="#">Pages <i class="fal fa-chevron-down"></i></a>

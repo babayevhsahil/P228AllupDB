@@ -148,3 +148,5 @@ C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\obj\Debug\netcoreapp3.1\P228AllupDB.RazorTargetAssemblyInfo.cs
 C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\obj\Debug\netcoreapp3.1\P228AllupDB.Views.pdb
 C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_TestPartial.cshtml.g.cs
+C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductListPartial.cshtml.g.cs

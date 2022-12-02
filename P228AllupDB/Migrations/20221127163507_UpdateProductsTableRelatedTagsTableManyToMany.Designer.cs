@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using P228AllupDB.DAL;
 
 namespace P228AllupDB.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221127163507_UpdateProductsTableRelatedTagsTableManyToMany")]
+    partial class UpdateProductsTableRelatedTagsTableManyToMany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -112,10 +114,7 @@ namespace P228AllupDB.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BrandId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("BrandId")
                         .HasColumnType("int");
 
                     b.Property<int>("Code")
@@ -186,8 +185,6 @@ namespace P228AllupDB.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BrandId");
-
-                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -398,11 +395,7 @@ namespace P228AllupDB.Migrations
                 {
                     b.HasOne("P228AllupDB.Models.Brand", "Brand")
                         .WithMany("Products")
-                        .HasForeignKey("BrandId");
-
-                    b.HasOne("P228AllupDB.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
