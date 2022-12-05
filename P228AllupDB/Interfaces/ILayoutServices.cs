@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 
 namespace P228AllupDB.Interfaces
 {
-    public interface ILayoutServices 
+    public interface ILayoutServices
     {
         Task<Dictionary<string, string>> GetSettingAsync();
+        Task<IEnumerable<Category>> GetCategoriesAsync();
     }
 }

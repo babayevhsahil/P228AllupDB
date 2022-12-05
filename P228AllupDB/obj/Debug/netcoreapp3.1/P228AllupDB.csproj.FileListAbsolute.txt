@@ -150,3 +150,7 @@ C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\obj\Debug\netcoreapp3.1\P228Allup
 C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_TestPartial.cshtml.g.cs
 C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductListPartial.cshtml.g.cs
+C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SearchPartial.cshtml.g.cs

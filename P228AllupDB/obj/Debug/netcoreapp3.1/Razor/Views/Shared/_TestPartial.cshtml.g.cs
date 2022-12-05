@@ -40,8 +40,15 @@ using P228AllupDB.ViewsModels.Home;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\SAHIL\Desktop\P228AllupDB\P228AllupDB\Views\_ViewImports.cshtml"
+using P228AllupDB.ViewsModels.Shop;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"57218c316b6921e2cd61027a2387edc31a2d9471", @"/Views/Shared/_TestPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bf4b2564de0b02084bef91eedd4b0a5c1711b643", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3891aae0f08b50b14bb259f3f0f2ed52f2e090fe", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared__TestPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
