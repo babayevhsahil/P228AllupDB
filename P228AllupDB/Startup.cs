@@ -40,6 +40,11 @@ namespace P228AllupDB
             });
 
             services.AddScoped<ILayoutServices,LayoutServices>();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +57,8 @@ namespace P228AllupDB
 
             app.UseRouting();
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

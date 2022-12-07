@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Product>
+
 <div class="product-items">
     <div class="row product-active">
         @for (int i = 0; i < (int)Math.Ceiling((decimal)Model.Count() / 2); i++)
@@ -13,10 +14,10 @@
                                 <img class="second-image" src="assets/images/product/@product.HoverImage" alt="product">
                             </a>
                             <ul class="product-meta">
-                                <li><a href="#"><i class="icon ion-bag"></i></a></li>
+                                <li><a class="addtobasket" asp-controller="basket" asp-action="addtobasket" asp-route-id="@product.Id"><i class="icon ion-bag"></i></a></li>
                                 <li><a href="#"><i class="icon ion-android-favorite-outline"></i></a></li>
                                 <li><a href="#"><i class="icon ion-android-options"></i></a></li>
-                                <li><a data-toggle="modal" data-target="#productQuickModal" href="#"><i class="icon ion-android-open"></i></a></li>
+                                <li><a data-toggle="modal" class="productModalBtn" data-target="#productQuickModal" asp-controller="shop" asp-action="modal" asp-route-id="@product.Id"><i class="icon ion-android-open"></i></a></li>
                             </ul>
                             @if (product.DiscountedPrice > 0)
                             {

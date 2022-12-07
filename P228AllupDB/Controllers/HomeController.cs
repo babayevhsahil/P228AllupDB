@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using P228AllupDB.ViewsModels.Home;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace P228AllupDB.Controllers
 {
@@ -22,12 +24,6 @@ namespace P228AllupDB.Controllers
 
         public async Task<IActionResult> Index()
         {
-
-            //List<Setting> settings = _context.Settings.ToList();
-            //ViewBag.Settings = settings;
-
-            //List<Slider> sliders = await _context.Sliders.Where(s => s.IsDeleted == false).ToListAsync();
-
             HomeVM homeVM = new HomeVM
             {
                 Sliders = await _context.Sliders.Where(s => s.IsDeleted == false).ToListAsync(),
@@ -39,5 +35,39 @@ namespace P228AllupDB.Controllers
 
             return View(homeVM);
         }
+
+        //public async Task<IActionResult> SahilSetCoockie()
+        //{
+        //    Product product = await _context.Products.FirstAsync();
+
+        //    string pro = JsonConvert.SerializeObject(product);
+
+        //    HttpContext.Response.Cookies.Append("basket", pro);
+
+        //    return Ok();
+        //}
+
+        //public async Task<IActionResult> SahilGetCoockie()
+        //{
+        //   string pro = HttpContext.Request.Cookies["basket"];
+
+        //    return Json(pro);
+        //}
+
+        //public async Task<IActionResult> SetSession()
+        //{
+
+        //    HttpContext.Session.SetString("P228", "My First Session");
+
+        //    return RedirectToAction(nameof(Index));
+        //}
+
+        //public async Task<IActionResult> GetSession()
+        //{
+
+        //    //HttpContext.Session.GetString("P228");
+
+        //    return Content(HttpContext.Session.GetString("P228")); 
+        //}
     }
 }

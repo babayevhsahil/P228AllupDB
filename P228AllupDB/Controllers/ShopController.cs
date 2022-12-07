@@ -38,5 +38,12 @@ namespace P228AllupDB.Controllers
 
             return PartialView("_SearchPartial", products);
         }
+
+        public async Task<IActionResult> Modal(int? id)
+        {
+            Product product = await _context.Products.Include(p => p.ProductImages).FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
+
+            return PartialView("_ProductModalPartial",product);
+        }
     }
 }
